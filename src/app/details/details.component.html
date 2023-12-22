@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<app-navbar-hotel></app-navbar-hotel>
+
+
+<!-- Shop Detail Start -->
+<div class="container-fluid py-5" *ngFor="let hotel of hotels">
+    <div class="row px-xl-5">
+        <div class="col-lg-5 pb-5">
+            <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner border">
+
+                    <div class="carousel-item active">
+                        <img class="w-60 " src="{{hotel.image}}" alt="Image">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-7 pb-5">
+            <h3 class="font-weight-semi-bold">{{ hotel.title }}</h3>
+            <h6 class="font-weight-semi-bold">{{ hotel.rangshotel }}</h6>
+            <div class="d-flex mb-3">
+                <div class="text-primary mr-2">
+
+                    <small class="fas fa-star"></small>
+                    &nbsp;
+
+                    <small class="pt-1">{{ hotel.rangshotel }}</small>
+                </div>
+                ||&nbsp;&nbsp;
+                <small class="pt-1">
+                    <i class="fas fa-map-marker-alt"></i>&nbsp;
+                    <a href="{{ hotel.localisation }}">localisation</a>
+                </small>
+
+            </div>
+            <h3 class="font-weight-semi-bold mb-4">{{hotel.price}} TND </h3>
+            <p class="mb-4">{{hotel.description}}</p>
+            <div class="d-flex mb-3">
+
+                <div class="d-flex align-items-center mb-4 ">
+                    <div class="input-group quantity mr-3" style="width: 130px;">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary px-3"><a target="_blank" href="{{hotel.avis}}">Consulter</a>
+                            </button>
+                            <style>
+                                /* Ajoutez cette section de style dans la partie HEAD de votre document ou dans votre feuille de style CSS externe */
+                                .btn a {
+                                    color: white;
+                                    text-decoration: none;
+                                    /* Supprime le soulignement du lien si nécessaire */
+                                }
+                            </style>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <app-additional-information></app-additional-information>
+    </div>
+    <app-footer></app-footer>

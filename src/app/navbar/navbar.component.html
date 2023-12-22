@@ -1,0 +1,25 @@
+<!-- navbar.component.html -->
+<nav>
+  <div class="nav__logo">North Africa's Tunisia Diamond</div>
+  <ul class="nav__links">
+    <li class="link"><a [routerLink]="['/']">Home</a></li>
+    <li class="link"><a [routerLink]="['/hotels']">Hotels</a></li>
+    <li class="link"><a [routerLink]="['/contact']">Contact Us</a></li>
+
+    <ng-container *ngIf="_user.isLoggedIn()">
+      <!-- Check if the user has the 'admin' role to display the Dashboard link -->
+      <ng-container *ngIf="_user.getUserRole() === 'admin'">
+        <li class="link"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+      </ng-container>
+
+      <!-- If logged in, display Deconnexion -->
+      <li class="btn btn-outline-danger rounded-5" (click)="Deconnexion()">Deconnexion</li>
+    </ng-container>
+
+    <!-- If not logged in, display Login and Register -->
+    <ng-container *ngIf="!_user.isLoggedIn()">
+      <li class="btn btn-outline-primary rounded-5"><a [routerLink]="['/login']">Login</a></li> &nbsp;
+      <li class="btn btn-outline-primary rounded-5"><a [routerLink]="['/register']">Register</a></li>
+    </ng-container>
+  </ul>
+</nav>

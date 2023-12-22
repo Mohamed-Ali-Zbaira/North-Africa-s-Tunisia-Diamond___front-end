@@ -1,0 +1,34 @@
+import { Component } from '@angular/core';
+import { UserService } from '../user.service';
+import {Router} from "@angular/router";
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+   utilisateur={
+    email:'',
+    password:''
+   }
+   constructor(private _user:UserService, private router:Router){}
+   ngOnInit(): void {
+
+   }
+   token:any;
+   login(){
+      this._user.login(this.utilisateur)
+      .subscribe(
+        res=>{
+           this.token=res;
+           localStorage.setItem('token',this.token.mytoken)
+           this.router.navigate(['/home']);
+        },
+        err=>{
+          console.log(err);
+          
+        }
+      );
+   }
+}

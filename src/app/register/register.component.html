@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="wrapper">
+    <h2>Registration</h2>
+
+    <form>
+      <div class="input-box">
+        <input type="text" placeholder="Enter your name" [(ngModel)]="user.name" name="name" >
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Enter your LastName" [(ngModel)]="user.LastName" name="name" >
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Enter your email" [(ngModel)]="user.email" name="email" >
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Create password" [(ngModel)]="user.password" name="password" >
+      </div>
+      <div class="policy">
+        <input type="checkbox" name="acceptTerms" >
+        <h3>I accept all terms & conditions</h3>
+      </div>
+      <div class="input-box button">
+        <input (click)="register()" type="Submit" value="Register Now ">
+
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a [routerLink]="['/login']">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

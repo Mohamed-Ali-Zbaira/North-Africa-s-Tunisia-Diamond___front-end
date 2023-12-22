@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="wrapper">
+    <h2>Login</h2>
+    <form (submit)="login()">
+      <div class="input-box">
+        <input type="text" placeholder="Enter your email" [(ngModel)]="utilisateur.email" name="email" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Enter your password" [(ngModel)]="utilisateur.password" name="password" required>
+      </div>
+      <div class="policy">
+        <input type="checkbox" id="acceptTerms" required>
+        <label for="acceptTerms">I accept all terms & conditions</label>
+      </div>
+      <div class="input-box button">
+        <input type="submit" value="Login now">
+      </div>
+      <div class="text">
+        <h3>Don't have an account? <a [routerLink]="['/register']">Register now</a></h3>
+      </div>
+    </form>
+   
+  </div>
+</div>
+<app-footer></app-footer>

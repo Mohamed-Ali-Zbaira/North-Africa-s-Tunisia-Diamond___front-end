@@ -1,0 +1,25 @@
+.nav__logo {
+	display: inline-block;
+	vertical-align: middle; /* Align vertically in case there's a height difference */
+	margin-right: 200px; /* Add some spacing between the logo and the links */
+  }
+  
+  .nav__links {
+	display: inline-block;
+	list-style-type: none; /* Remove bullet points on the list */
+	margin: 0; /* Remove any default margins */
+	padding: 0; /* Remove any default padding */
+  }
+  
+  .nav__links .link {
+	display: inline; /* Ensure list items are displayed inline */
+	margin-right: 10px; /* Add spacing between list items */
+  }
+  
+  /* Style for the links (you can customize this as needed) */
+  .nav__links a {
+	text-decoration: none;
+	color: #000; /* Change the link color as needed */
+	font-size: 20px;
+  }
+  

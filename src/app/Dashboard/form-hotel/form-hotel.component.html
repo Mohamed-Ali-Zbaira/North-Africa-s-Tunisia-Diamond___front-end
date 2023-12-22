@@ -1,0 +1,104 @@
+<!--  Body Wrapper -->
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+  data-sidebar-position="fixed" data-header-position="fixed">
+  <!-- Sidebar Start -->
+  <aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div>
+
+      <!-- Sidebar navigation-->
+      <app-sidebar></app-sidebar>
+
+    </div>
+    <!-- End Sidebar scroll-->
+  </aside>
+  <!--  Sidebar End -->
+  <!--  Main wrapper -->
+  <div class="body-wrapper py-0">
+    <!--  profile -->
+    <app-profile></app-profile>
+    <!--  Header End -->
+    <div class="container-fluid py-0">
+      <div class="card-body">
+        <h5 class="card-title fw-semibold mb-4">Forms Ajout Hotel </h5>
+        <div class="card">
+          <div class="card-body">
+            <!-- form-hotel.component.html -->
+            <div *ngIf="showAlert" class="alert alert-success mt-3">
+              Hotel added successfully!
+            </div>
+            <form (submit)="onSubmit()">
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="hotel.title" name="title" required>
+                <div class="form-text">We'll never share your Title with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" [(ngModel)]="hotel.price" name="price" required>
+                <div class="form-text">We'll never share your Price with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" [(ngModel)]="hotel.phone" name="phone" required>
+                <div class="form-text">We'll never share your Phone with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" [(ngModel)]="hotel.description" name="description"
+                  required></textarea>
+                <div class="form-text">We'll never share your Description with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="avis" class="form-label">Avis</label>
+                <select class="form-select" id="avis" [(ngModel)]="hotel.avis" name="avis" required>
+                  <option value="1">1 Etoile</option>
+                  <option value="2">2 Etoile</option>
+                  <option value="3">3 Etoile</option>
+                  <option value="4">4 Etoile</option>
+                  <option value="5">5 Etoile</option>
+                </select>
+                <div class="form-text">We'll never share your Avis with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="localisation" class="form-label">Localisation</label>
+                <input type="text" class="form-control" id="localisation" [(ngModel)]="hotel.localisation"
+                  name="localisation" required>
+                <div class="form-text">We'll never share your Localisation with anyone else.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image"  name="image"
+                  accept="image/*" required>
+              </div>
+<!-- (change)="onImageChange($event)" -->
+              <div class="mb-3">
+                <label for="rangshotel" class="form-label">Rangshotel</label>
+                <input type="number" class="form-control" id="rangshotel" [(ngModel)]="hotel.rangshotel"
+                  name="rangshotel" required>
+                <div class="form-text">We'll never share your Rangshotel with anyone else.</div>
+              </div>
+
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" 
+                  name="checked">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div *ngIf="showAlert" class="alert alert-success mt-3">
+              Admin ajouté avec succès.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

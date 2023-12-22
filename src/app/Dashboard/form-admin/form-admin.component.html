@@ -1,0 +1,80 @@
+
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+       
+        <!-- Sidebar navigation-->
+        <app-sidebar></app-sidebar>
+      
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  profile -->
+      <app-profile></app-profile>
+      <!--  Header End -->
+      <div class="container-fluid py-0">
+        <div class="card-body">
+            <h5 class="card-title fw-semibold mb-4">Forms Ajout Admin </h5>
+            <div class="card">
+              <div class="card-body">
+                <div *ngIf="showAlert" class="alert alert-success d-flex align-items-center" role="alert">
+                  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                  <div>
+                    Admin ajouté avec succès.
+                  </div>
+                </div>
+                <form>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" [(ngModel)]="user.name" required>
+                    <div id="nameHelp" class="form-text">We'll never share your Name with anyone else.</div>
+                  </div>
+                
+                  <div class="mb-3">
+                    <label for="lastName" class="form-label">LastName</label>
+                    <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" name="lastName" [(ngModel)]="user.lastName" required>
+                    <div id="lastNameHelp" class="form-text">We'll never share your LastName with anyone else.</div>
+                  </div>
+                
+                  <div class="mb-3">
+                    <label for="roleSelect" class="form-label">Role</label>
+                    <select class="form-select" id="roleSelect" aria-describedby="roleHelp" name="role" [(ngModel)]="user.role" required>
+                      <option value="user">user</option>
+                      <option value="admin">admin</option>
+                    </select>
+                    <div id="roleHelp" class="form-text">We'll never share your role with anyone else.</div>
+                  </div>
+                
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" [(ngModel)]="user.email" required>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required>
+                  </div>
+                
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exampleCheck1" >
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                
+                  <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                </form>
+                
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+ 
