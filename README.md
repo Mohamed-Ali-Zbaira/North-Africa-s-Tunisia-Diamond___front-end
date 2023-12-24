@@ -1,6 +1,12 @@
-# Myaplication
+# North Africa's Tunisia Diamond
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+
+## Video Sensor
+https://github.com/Mohamed-Ali-Zbaira/North-Africa-s-Tunisia-Diamond___Back-end/assets/129232389/fafc10fb-caf3-4df2-b6ae-2769d896117a
+## Lien Back-end
+For the Back-end code and presentation, visit the [North Africa's Tunisia Diamond Back-end repository](https://github.com/Mohamed-Ali-Zbaira/North-Africa-s-Tunisia-Diamond___Back-end).
+This repository contains the back-end code for the North Africa's Tunisia Diamond project. It's a Angular application built with Express.js to manage hotels and users. The application supports features such as adding, retrieving, updating, and deleting hotel information, along with user registration and login.
 
 ## Development server
 
